@@ -20,14 +20,14 @@ int main()
 	//initialize the primes to be used
 	ZZ p_prime, q_prime;
 	
-	cout << "Please enter the first prime of your twin prime system: \n";
-	cin >> p_prime;
-	cout << "\n";
+	std::cout << "Please enter the first prime of your twin prime system: \n";
+	std::cin >> p_prime;
+	std::cout << "\n";
 	
 	q_prime = p_prime + 2;
 	
-	cout << "We will now generate the difference set for Z" << p_prime <<"xZ"<< q_prime;
-	cout << "\n";
+	std::cout << "We will now generate the difference set for Z" << p_prime <<"xZ"<< q_prime;
+	std::cout << "\n";
 	
 	// create vectors to hold the values of the quadratic residues and non-quadratic residues mod p and q
 	Vec<ZZ> p_prime_quad, p_prime_non, q_prime_quad, q_prime_non;
@@ -82,10 +82,10 @@ int main()
 	
 		
 	// From theorem, if group is AxB, then we fill (a,0), where a is in A
-	cout << "{ ";
+	std::cout << "{ ";
 	for (int k=0;k<p_prime;k++)
 	{
-		cout << "(" << k << ",0) ";
+		std::cout << "(" << k << ",0) ";
 	}
 	
 	
@@ -94,7 +94,7 @@ int main()
 	{
 		for (int l=0;l<q_len;l++)
 		{
-			cout << "(" << p_prime_quad[k] << "," << q_prime_quad[l] << ") ";
+			std::cout << "(" << p_prime_quad[k] << "," << q_prime_quad[l] << ") ";
 		}
 	}
 	
@@ -104,9 +104,9 @@ int main()
 	{
 		for (int l=0;l<q_len;l++)
 		{
-			cout << "(" << p_prime_non[k] << "," << q_prime_non[l] << ") ";
+			std::cout << "(" << p_prime_non[k] << "," << q_prime_non[l] << ") ";
 		}
 	}
-	cout << "}\n" << "\n";
+	std::cout << "}\n" << "\n";
 	std::cout << "Time: " << (std::clock() - s_time) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
 }
